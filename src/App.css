@@ -50,11 +50,17 @@ input:focus {
   padding: 0.8rem;
   background-color: darkblue;
   color: white;
+  background: linear-gradient(to left, darkblue 50%, #0066ff 50%) right;
+  background-size: 200%;
   margin-top: 1rem;
   width: 100%;
   text-align: center;
   cursor: pointer;
   box-sizing: border-box;
+  transition: all 1s;
+}
+.addBtn:hover {
+  background-position: left;
 }
 
 .task {
