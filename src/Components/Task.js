@@ -1,19 +1,21 @@
 import CloseIcon from "@mui/icons-material/Close";
-import { Zoom } from "@mui/material";
 
-const Task = ({ task, removeTask }) => {
+const Task = ({ task, removeTask, setPopup }) => {
   return (
-    <Zoom in={true}>
-      <div className="task">
-        {task}
-        <CloseIcon
-          className="close"
-          onClick={() => {
-            removeTask(task);
-          }}
-        />
-      </div>
-    </Zoom>
+    <div
+      className="task"
+      onDoubleClick={() => {
+        setPopup((prev) => !prev);
+      }}
+    >
+      {task}
+      <CloseIcon
+        className="close"
+        onClick={() => {
+          removeTask(task);
+        }}
+      />
+    </div>
   );
 };
 

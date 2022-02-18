@@ -83,9 +83,43 @@ input:focus {
 }
 
 .warn {
-  background-color: yellow;
+  background-color: rgb(224, 224, 96);
   color: black;
   position: relative;
   text-align: center;
   padding: 0.5rem;
+}
+
+.reminder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  padding: 3rem;
+  z-index: 99;
+  text-align: center;
+  background-color: white;
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.choiceFlex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.yes {
+  padding: 0.3rem;
+  flex-basis: 33%;
+  background-color: darkblue;
+  color: white;
+}
+
+.no {
+  padding: 0.3rem;
+  flex-basis: 33%;
+  background-color: red;
+  color: white;
 }
