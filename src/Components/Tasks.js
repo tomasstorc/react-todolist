@@ -1,12 +1,19 @@
 import React from "react";
 import Task from "./Task";
 
-const Tasks = ({ tasks, removeTask, setPopup }) => {
+const Tasks = ({ tasks, removeTask, setImportant }) => {
   return (
     <div>
-      {tasks.map((task) => (
+      {tasks.map((task, index) => (
         <h3>
-          <Task task={task} removeTask={removeTask} setPopup={setPopup} />
+          <Task
+            key={index}
+            id={index}
+            task={task.name}
+            isImportant={task.important}
+            removeTask={removeTask}
+            setImportant={setImportant}
+          />
         </h3>
       ))}
     </div>
