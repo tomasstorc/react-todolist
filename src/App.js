@@ -3,14 +3,21 @@ import { useState } from "react";
 import Header from "./Components/Header";
 import NewTask from "./Components/NewTask";
 import Tasks from "./Components/Tasks";
-import Reminder from "./Components/Reminder";
 
 function App() {
-  const [taskList, setTaskList] = useState(["sample", "task"]);
-  const [popup, setPopup] = useState(false);
+  const [taskList, setTaskList] = useState([
+    { name: "test", important: false },
+    { name: "test2", important: true },
+  ]);
 
   function addNewTask(newTask) {
-    setTaskList([...taskList, newTask]);
+    setTaskList([...taskList, { name: newTask, important: false }]);
+  }
+
+  function setImportant(index) {
+    const newTaskList = [...taskList];
+    newTaskList[index].important = !newTaskList[index].important;
+    setTaskList(newTaskList);
   }
 
   function removeTask(task) {
@@ -24,9 +31,8 @@ function App() {
       <Tasks
         tasks={taskList}
         removeTask={removeTask}
-        setPopup={setPopup}
+        setImportant={setImportant}
       ></Tasks>
-      {popup && <Reminder setPopup={setPopup} />}
       {}
     </div>
   );

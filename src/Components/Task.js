@@ -1,11 +1,14 @@
 import CloseIcon from "@mui/icons-material/Close";
 
-const Task = ({ task, removeTask, setPopup }) => {
+const Task = ({ id, task, removeTask, setImportant, isImportant }) => {
   return (
     <div
       className="task"
+      style={{
+        borderLeft: isImportant ? "5px solid red" : "",
+      }}
       onDoubleClick={() => {
-        setPopup((prev) => !prev);
+        setImportant(id);
       }}
     >
       {task}
