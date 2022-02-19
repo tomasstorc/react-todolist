@@ -72,6 +72,11 @@ input:focus {
   box-shadow: 1px 1px 1px 1px #ccc;
   padding: 1rem;
   position: relative;
+  transition: 0.5s all;
+}
+
+.task:hover {
+  transform: scale(1.1);
 }
 
 .close {
